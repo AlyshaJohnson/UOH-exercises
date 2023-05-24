@@ -1,19 +1,9 @@
 ```mermaid
     sequenceDiagram
-        actor user
         participant browser
         participant server
 
-        user->>browser: type "Note 76589053" into input field and click save
-        browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-        activate server
-        server-->>browser: redirect to https://studies.cs.helsinki.fi/exampleapp/notes
-        deactivate server
-
-        Note right of user: user saves notes in browser
-        Note right of browser: on submit, the browser sends note content to server
-
-        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
         activate server
         server-->>browser: HTML document
         deactivate server
@@ -23,7 +13,7 @@
         server-->>browser: The CSS file
         deactivate server
 
-        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
         activate server
         server-->>browser: The JavaScript file
         deactivate server
